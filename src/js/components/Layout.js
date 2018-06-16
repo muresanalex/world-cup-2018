@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default class Layout extends React.Component {
+class Layout extends Component {
     constructor() {
         super();
         this.state = {
@@ -16,3 +16,5 @@ export default class Layout extends React.Component {
         );
     }
 }
+
+export default Layout;
