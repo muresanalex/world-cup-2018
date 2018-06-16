@@ -1,0 +1,46 @@
+.fixtures-group-wrapper {
+    width: 310px;
+    height: 280px;
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 7px 30px grey;
+
+    &:hover {
+        background-color: #000274;
+        color: white;
+        cursor: pointer;
+
+        h4 {
+            color: #ec2c83;
+        }
+
+        .fixture:nth-child( 2n ) {
+            background-color: #000158;
+        }
+    }
+
+    h4 {
+        font-size: 24px;
+        text-transform: uppercase;
+        text-align: left;
+        margin: 0 0 20px 0;
+    }
+
+    .fixture {
+        margin: 5px 0;
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+
+        &:nth-child( 2n ) {
+            background-color: #EEE;
+            padding: 10px 0;
+        }
+
+        span {
+            width: 33%;
+        }
+    }
+}

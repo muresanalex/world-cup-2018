@@ -1,11 +1,25 @@
 import React from "react";
+import Spinner from "./spinner.react";
+import "./fixtures.scss";
 
-const FixturesGroup = ( { fixtures, title } ) => (
-    <div className="fixtures-group-wrapper">
-        <h4>{ title }</h4>
-        { fixtures.map( buildFixtures ) }
-    </div>
-);
+const FixturesGroup = ( { fixtures, title } ) => {
+    const isLoading = fixtures.length === 0;
+
+    if ( isLoading ) {
+        return (
+            <div className="fixtures-group-wrapper">
+                <Spinner />
+            </div>
+        );
+    }
+
+    return (
+        <div className="fixtures-group-wrapper">
+            <h4>{ title }</h4>
+            { fixtures.map( buildFixtures ) }
+        </div>
+    );
+};
 
 function buildFixtures( item ) {
     const homeTeam = item.homeTeamName || "TBA";

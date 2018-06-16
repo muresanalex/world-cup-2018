@@ -1,0 +1,31 @@
+.navigation-wrapper {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 10px;
+        
+        li {
+            display: inline-block;
+            
+            &.active {
+
+                button {
+                    background:#000274;
+                }
+            }
+
+            &.middle {
+                border-right: 2px solid white;                    
+                border-left: 2px solid white;                    
+            }
+
+            button {
+                height: 50px;
+                width: 100px;
+                border: none;
+                background: #ec2c83;
+                color: white;
+            }
+        }
+    }
+}
