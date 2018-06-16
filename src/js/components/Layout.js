@@ -1,17 +1,27 @@
 import React, { Component } from "react";
+import { getFixtures } from "../apiService/apiService";
+import FixturesOverview from "./fixtures.react";
 
 class Layout extends Component {
     constructor() {
         super();
         this.state = {
-            title: "It works!",
+            fixtures: [],
         };
+    }
+
+    componentDidMount() {
+        getFixtures()
+            .then( ( res ) => {
+                this.setState( { fixtures: res.fixtures } );
+            } )
+            .catch( ( err ) => { console.log( err ); } );
     }
 
     render() {
         return (
             <div>
-                <h1>{ this.state.title }</h1>
+                <FixturesOverview fixtures={ this.state.fixtures } />
             </div>
         );
     }
