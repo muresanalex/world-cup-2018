@@ -15,5 +15,49 @@
         h4 {
             color: #ec2c83;
         }
+
+        .standings-container {
+            table {
+                border: 1px solid #ec2c83;
+                
+                thead {
+                    background-color: #ec2c83;
+                }
+            }
+        }
+        
+    }
+
+    h4 {
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+    
+    .standings-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        table {
+            width: 133px;
+            margin: 45px 10px 10px;
+            border: 1px solid #000274;
+
+            thead {
+                background-color: #000274;
+                color: white;
+            }
+
+            th, td {
+                padding: 0 5px;
+            }
+
+            .team {
+                text-align: left;
+            }
+
+            .points {
+                text-align: right;
+            }
+        }
     }
 }

@@ -20,7 +20,16 @@ function getFixtures() {
         .then( ( res ) => res.json() );
 }
 
+function getLeagueTable() {
+    return fetch( `${ baseUrl }/leagueTable`, {
+        method: "GET",
+        headers,
+    } )
+        .then( ( res ) => res.json() );
+}
+
 export {
     getCompetition,
     getFixtures,
+    getLeagueTable,
 };

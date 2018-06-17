@@ -2,8 +2,9 @@ import React from "react";
 import Spinner from "./spinner.react";
 import "./nextMatch.scss";
 
+const DEFAULT_GOALS = 0;
+
 const NextMatch = ( { fixture } ) => {
-    console.log( "fixture: ", fixture );
     if ( !fixture ) {
         return (
             <div className="next-match-wrapper">
@@ -12,8 +13,8 @@ const NextMatch = ( { fixture } ) => {
     }
 
     const isLive = fixture.status === "IN_PLAY";
-    const homeTeamGoals = fixture.result.goalsHomeTeam;
-    const awayTeamGoals = fixture.result.goalsAwayTeam;
+    const homeTeamGoals = fixture.result.goalsHomeTeam || DEFAULT_GOALS;
+    const awayTeamGoals = fixture.result.goalsAwayTeam || DEFAULT_GOALS;
     const score = isLive ? <span>{ `${ homeTeamGoals } - ${ awayTeamGoals }` }</span> : <span> - </span>;
 
     return (
